@@ -1,14 +1,10 @@
-extends KinematicBody2D
+extends "res://engine/entity.gd"
 
-const SPEED = 70
-
-var movedir = Vector2.ZERO
-var spritedir = "down"
 var validMoves = [
-	{dir = "up", vec = Vector2(0, -1)},
-	{dir = "down", vec = Vector2(0, 1)},
-	{dir = "left", vec = Vector2(-1, 0)},
-	{dir = "right", vec = Vector2(1, 0)}
+	{dir = "up", vec = dir.up},
+	{dir = "down", vec = dir.down},
+	{dir = "left", vec = dir.left},
+	{dir = "right", vec = dir.right}
 ]
 
 func _physics_process(delta):
@@ -16,7 +12,7 @@ func _physics_process(delta):
 	movement_loop()
 	spritedir_loop()
 	
-	if movedir != Vector2.ZERO:
+	if movedir != dir.center:
 		if is_on_wall():
 			for i in validMoves:
 				if spritedir == i.dir and test_move(transform, i.vec):
@@ -34,23 +30,3 @@ func controls_loop():
 	
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
-
-func movement_loop():
-	var motion = movedir.normalized() * SPEED
-	move_and_slide(motion, Vector2.ZERO)
-
-func spritedir_loop():
-	match movedir:
-		Vector2(-1, 0):
-			spritedir = "left"
-		Vector2(1, 0):
-			spritedir = "right"
-		Vector2(0, -1):
-			spritedir = "up"
-		Vector2(0, 1):
-			spritedir = "down"
-
-func anim_switch(animation):
-	var newanim = str(animation, spritedir)
-	if $anim.current_animation != newanim:
-		$anim.play(newanim)

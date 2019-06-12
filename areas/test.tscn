@@ -8,7 +8,6 @@
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 79.9335, 70.5836 )
-SPEED = 70
 
 [node name="stalfos" parent="." instance=ExtResource( 2 )]
 position = Vector2( 39.1459, 72.447 )

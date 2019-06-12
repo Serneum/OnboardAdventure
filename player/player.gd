@@ -11,6 +11,7 @@ func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	spritedir_loop()
+	damage_loop()
 	
 	if movedir != dir.center:
 		if is_on_wall():

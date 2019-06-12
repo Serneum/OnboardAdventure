@@ -12,6 +12,18 @@ position = Vector2( 79.9335, 70.5836 )
 [node name="stalfos" parent="." instance=ExtResource( 2 )]
 position = Vector2( 39.1459, 72.447 )
 
+[node name="stalfos2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 25.8819, 60.617 )
+
+[node name="stalfos3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 51.3345, 60.2585 )
+
+[node name="stalfos5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 52.0514, 82.1261 )
+
+[node name="stalfos4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 25.882, 83.5601 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )

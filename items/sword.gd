@@ -1,0 +1,1 @@
+extends "res://engine/item.gd"

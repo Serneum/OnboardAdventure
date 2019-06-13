@@ -4,7 +4,7 @@
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://engine/camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tiles/wall.tres" type="TileSet" id=4]
-[ext_resource path="res://enemies/stalfos.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tiles/enemy_tilemap.tscn" type="PackedScene" id=5]
 
 [node name="Node" type="Node"]
 
@@ -25,5 +25,5 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="stalfos" parent="." instance=ExtResource( 5 )]
-position = Vector2( 77.9256, -62.568 )
+[node name="enemies" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( -262141, 0, 0, -262139, 0, 0, -196604, 0, 0, -196602, 0, 0, 262139, 0, 0, 196610, 0, 0, 196615, 0, 0, 196623, 0, 0, 327674, 0, 0, 262160, 0, 0, 393210, 0, 0, 327696, 0, 0, 458747, 0, 0, 393218, 0, 0, 393223, 0, 0, 393231, 0, 0, 851971, 0, 0, 851973, 0, 0, 917508, 0, 0, 917510, 0, 0 )

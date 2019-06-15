@@ -1,6 +1,7 @@
 extends "res://engine/entity.gd"
 
 var state = "default"
+var keys = 0
 
 var validMoves = [
 	{dir = "up", vec = dir.up},
@@ -15,6 +16,7 @@ func _physics_process(delta):
 			state_default()
 		"swing":
 			state_swing()
+	keys = min(keys, 9)
 
 func state_default():
 	controls_loop()

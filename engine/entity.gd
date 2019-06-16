@@ -47,22 +47,24 @@ func anim_switch(animation):
 		$anim.play(newanim)
 
 func damage_loop():
+	health = min(health, MAXHEALTH)
+
 	if hitstun > 0:
 		hitstun -= 1
 		$Sprite.texture = texture_hurt
 	else:
 		$Sprite.texture = texture_default
 		if TYPE == "ENEMY" && health <= 0:
-			var death_animation = preload("res://enemies/enemy_death.tscn").instance()
-			get_parent().add_child(death_animation)
-			death_animation.global_transform = global_transform
+			var drop =  randi() % 3
+			if drop == 0:
+				instance_scene(preload("res://pickups/heart.tscn"))
+			instance_scene(preload("res://enemies/enemy_death.tscn"))
 			queue_free()
 	
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
 		if hitstun == 0 and does_damage(body) and body.get("TYPE") != TYPE:
 			health -= body.get("DAMAGE")
-			print(body.get("DAMAGE"))
 			hitstun = 10
 			knockdir = global_transform.origin - body.global_transform.origin
 
@@ -77,3 +79,8 @@ func use_item(item):
 func does_damage(body):
 	var damage = body.get("DAMAGE")
 	return damage != null and damage > 0
+
+func instance_scene(scene):
+	var new_scene = scene.instance()
+	new_scene.global_position = global_position
+	get_parent().add_child(new_scene)

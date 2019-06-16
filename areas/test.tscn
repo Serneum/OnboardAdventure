@@ -27,4 +27,3 @@ __meta__ = {
 }
 
 [node name="enemies" parent="." instance=ExtResource( 5 )]
-tile_data = PoolIntArray( 262147, 0, 0 )

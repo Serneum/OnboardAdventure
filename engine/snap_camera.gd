@@ -41,6 +41,10 @@ func _process(delta):
 		if room_rect.has_point(door.global_position):
 			door.current_room = room_state
 	
+	for secret in get_tree().get_nodes_in_group("secret"):
+		if room_rect.has_point(secret.global_position):
+			secret.current_room = room_state
+	
 	if room_state:
 		get_enemies()
 	

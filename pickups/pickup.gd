@@ -19,14 +19,6 @@ func area_entered(area):
 	if parent.name == "sword":
 		body_entered(parent.get_parent())
 
-# TODO: Find a way to delegate this to child classes
+# Delegate to child implementations
 func body_entered(body):
-	match self.name:
-		"key":
-			if body.name == "player" && body.keys < 9:
-				body.keys += 1
-				destroy()
-		"heart":
-			if body.name == "player":
-				body.health = min(body.health + 1, body.MAXHEALTH)
-				destroy()
+	return

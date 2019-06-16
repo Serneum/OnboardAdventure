@@ -1,6 +1,6 @@
 extends "res://engine/item.gd"
 
-func _ready():
+func start():
 	TYPE = get_parent().TYPE
 	$anim.connect("animation_finished", self, "destroy")
 	$anim.play(str("swing", get_parent().spritedir))

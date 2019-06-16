@@ -31,8 +31,11 @@ func _process(delta):
 		
 		if !room_state:
 			for area in get_overlapping_areas():
-				if area.get("disappears") == true:
+				var body = area.get_parent()
+				if area.get_groups().has("disappears"):
 					area.queue_free()
+				if body.get_groups().has("projectile"):
+					body.queue_free()
 	
 	for door in get_tree().get_nodes_in_group("enemy_door"):
 		if room_rect.has_point(door.global_position):

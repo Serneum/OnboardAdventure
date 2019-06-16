@@ -19,7 +19,7 @@ func _physics_process(delta):
 	
 	if movetimer > 0:
 		movetimer -= 1
-	if movetimer == 0:
+	elif movetimer == 0:
 		movedir = dir.rand()
 		movetimer = int(rand_range(movetimer_length / 2, movetimer_length))
 	

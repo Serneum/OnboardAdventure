@@ -5,8 +5,9 @@ export(int) var SPEED = 0
 export(float) var DAMAGE = 1
 export(int) var MAXHEALTH = 2
 
-var movedir = dir.center
-var knockdir = dir.center
+var movedir = Vector2.ZERO
+var last_movedir = Vector2(0, 1)
+var knockdir = Vector2.ZERO
 var spritedir = "down"
 
 var hitstun = 0
@@ -30,6 +31,8 @@ func movement_loop():
 	else:
 		motion = knockdir.normalized() * 125
 	move_and_slide(motion, Vector2.ZERO)
+	if movedir != dir.center && dir.list.has(movedir):
+		last_movedir = movedir
 
 func spritedir_loop():
 	match movedir:
@@ -73,6 +76,8 @@ func use_item(item):
 	add_child(newitem)
 	if get_tree().get_nodes_in_group(groupname).size() > newitem.maxamount:
 		newitem.queue_free()
+		return
+	newitem.start()
 
 func does_damage(body):
 	var damage = body.get("DAMAGE")

@@ -4,6 +4,8 @@ export(bool) var disappears = false
 export(String, FILE) var sound = "res://pickups/item.wav"
 
 func _ready():
+	if disappears:
+		add_to_group("disappears")
 	connect("body_entered", self, "body_entered")
 	connect("area_entered", self, "area_entered")
 

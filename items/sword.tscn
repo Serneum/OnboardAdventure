@@ -5,167 +5,268 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "swingdown"
+step = 0.33
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 10 ) ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 180.0 ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -13, 3 ), Vector2( -11, 12 ), Vector2( 4, 15 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:z_index")
+tracks/2/path = NodePath("Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 270.0, 180.0, 180.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("area:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.25 ), Vector2( 1, 1 ), Vector2( 0.25, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -12, 3 ), Vector2( -9, 10 ), Vector2( 4, 14 ) ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "swingleft"
+step = 0.33
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -10, 3 ) ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 270.0 ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -3, -16 ), Vector2( -15, -10 ), Vector2( -16, 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:z_index")
+tracks/2/path = NodePath("Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 0.0, 270.0, 270.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("area:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.25, 1 ), Vector2( 1, 1 ), Vector2( 1, 0.25 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -3, -15 ), Vector2( -13, -8 ), Vector2( -15, 4 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "swingright"
+step = 0.33
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 10, 3 ) ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 90.0 ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, -16 ), Vector2( 15, -10 ), Vector2( 16, 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:z_index")
+tracks/2/path = NodePath("Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 0.0, 0.0, 90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("area:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.25, 1 ), Vector2( 1, 1 ), Vector2( 1, 0.25 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, -15 ), Vector2( 13, -8 ), Vector2( 15, 4 ) ]
 }
 
 [sub_resource type="Animation" id=4]
+step = 0.33
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 15, -1 ), Vector2( 14, -9 ), Vector2( -5, -16 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:z_index")
+tracks/2/path = NodePath("Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ -1 ]
+"values": [ 90.0, 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("area:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.25 ), Vector2( 1, 1 ), Vector2( 0.25, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("area:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 14, -1 ), Vector2( 12, -7 ), Vector2( -5, -15 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 2, 6 )
+extents = Vector2( 8, 8 )
 
 [node name="sword" type="Node2D"]
-position = Vector2( 10, 3 )
-rotation = 1.5708
 z_index = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 DAMAGE = 0.5
 animname = "swing"
 
@@ -177,17 +278,14 @@ anims/swingright = SubResource( 3 )
 anims/swingup = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4, 15 )
+rotation = 3.14159
 texture = ExtResource( 2 )
 hframes = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="area" type="Area2D" parent="."]
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 4, 14 )
+scale = Vector2( 0.25, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
 shape = SubResource( 5 )

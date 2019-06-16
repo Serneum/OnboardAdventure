@@ -2,7 +2,7 @@ extends Node2D
 
 var TYPE = null
 
-export(int) var DAMAGE = 1
+export(float) var DAMAGE = 1
 export(int) var maxamount = 1
 export(String) var animname = ""
 

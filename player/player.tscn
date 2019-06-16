@@ -213,7 +213,7 @@ extents = Vector2( 7, 8 )
 script = ExtResource( 1 )
 TYPE = "PLAYER"
 SPEED = 70
-DAMAGE = 0
+DAMAGE = 0.0
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0

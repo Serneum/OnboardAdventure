@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var TYPE = "ENEMY"
 export(int) var SPEED = 0
-export(int) var DAMAGE = 1
+export(float) var DAMAGE = 1
 export(int) var MAXHEALTH = 2
 
 var movedir = dir.center
@@ -10,11 +10,12 @@ var knockdir = dir.center
 var spritedir = "down"
 
 var hitstun = 0
-var health = MAXHEALTH
+var health = 0
 var texture_default = null
 var texture_hurt = null
 
 func _ready():
+	health = MAXHEALTH
 	if TYPE == "ENEMY":
 		set_collision_mask_bit(1,1)
 		set_physics_process(false)
@@ -61,6 +62,7 @@ func damage_loop():
 		var body = area.get_parent()
 		if hitstun == 0 and does_damage(body) and body.get("TYPE") != TYPE:
 			health -= body.get("DAMAGE")
+			print(body.get("DAMAGE"))
 			hitstun = 10
 			knockdir = global_transform.origin - body.global_transform.origin
 

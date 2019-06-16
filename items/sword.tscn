@@ -3,7 +3,7 @@
 [ext_resource path="res://items/sword.gd" type="Script" id=1]
 [ext_resource path="res://items/sword.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "swingdown"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -42,7 +42,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "swingleft"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -81,7 +81,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "swingright"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -120,8 +120,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "swingdown"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -159,7 +158,7 @@ tracks/2/keys = {
 "values": [ -1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2, 6 )
 
 [node name="sword" type="Node2D"]
@@ -167,14 +166,15 @@ position = Vector2( 10, 3 )
 rotation = 1.5708
 z_index = 1
 script = ExtResource( 1 )
+DAMAGE = 0.5
 animname = "swing"
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/swingdown = SubResource( 3 )
-anims/swingleft = SubResource( 5 )
-anims/swingright = SubResource( 6 )
-anims/swingup = SubResource( 2 )
+anims/swingdown = SubResource( 1 )
+anims/swingleft = SubResource( 2 )
+anims/swingright = SubResource( 3 )
+anims/swingup = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -190,7 +190,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }

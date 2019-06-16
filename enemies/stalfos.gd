@@ -4,6 +4,8 @@ var movetimer_length = 15
 var movetimer = 0
 
 func _ready():
+	print(health)
+	print(MAXHEALTH)
 	$anim.play("default")
 	movedir = dir.rand()
 

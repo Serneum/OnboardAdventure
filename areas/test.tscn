@@ -23,7 +23,7 @@ visible = false
 current = true
 
 [node name="enemies" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray( -262141, 0, 0, -262138, 0, 0, 720899, 0, 0, 720902, 0, 0 )
+tile_data = PoolIntArray( -262141, 0, 0, -262138, 0, 0, 393219, 1, 0, 393222, 1, 0, 720899, 0, 0, 720902, 0, 0 )
 
 [node name="dungeon" type="TileMap" parent="."]
 z_index = -100

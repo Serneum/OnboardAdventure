@@ -16,6 +16,7 @@ func _process(delta):
 				$anim.play("open")
 		elif !$area.get_overlapping_bodies().has(player):
 			if $anim.assigned_animation != "close":
+				sfx.play(load(str("res://tiles/door_shut.wav")))
 				$anim.play("close")
 	else:
 		if $anim.assigned_animation != "open":

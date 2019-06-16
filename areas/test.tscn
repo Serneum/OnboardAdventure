@@ -58,4 +58,3 @@ position = Vector2( 88, 144 )
 [node name="secret" parent="." instance=ExtResource( 9 )]
 position = Vector2( 71, -89 )
 z_index = -5
-item = "heart"

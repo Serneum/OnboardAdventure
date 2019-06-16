@@ -13,6 +13,7 @@ func _process(delta):
 	if current_room:
 		if camera.enemy_count == 0:
 			if $anim.assigned_animation != "open":
+				sfx.play(load(str("res://tiles/secret.wav")))
 				$anim.play("open")
 		elif !$area.get_overlapping_bodies().has(player):
 			if $anim.assigned_animation != "close":

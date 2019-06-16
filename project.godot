@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 dir="*res://engine/directions.gd"
+sfx="*res://engine/sfx.gd"
 
 [display]
 

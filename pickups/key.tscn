@@ -8,6 +8,7 @@ extents = Vector2( 3, 6 )
 
 [node name="key" type="Area2D"]
 script = ExtResource( 1 )
+sound = "res://pickups/key.wav"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

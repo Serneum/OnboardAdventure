@@ -13,6 +13,7 @@ var hitstun = 0
 var health = 0
 var texture_default = null
 var texture_hurt = null
+var sound_damage = preload("res://enemies/enemy_hurt.wav")
 
 func _ready():
 	health = MAXHEALTH
@@ -55,15 +56,12 @@ func damage_loop():
 	else:
 		$Sprite.texture = texture_default
 		if TYPE == "ENEMY" && health <= 0:
-			var drop =  randi() % 3
-			if drop == 0:
-				instance_scene(preload("res://pickups/heart.tscn"))
-			instance_scene(preload("res://enemies/enemy_death.tscn"))
-			queue_free()
+			enemy_die()
 	
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
 		if hitstun == 0 and does_damage(body) and body.get("TYPE") != TYPE:
+			sfx.play(sound_damage)
 			health -= body.get("DAMAGE")
 			hitstun = 10
 			knockdir = global_transform.origin - body.global_transform.origin
@@ -84,3 +82,11 @@ func instance_scene(scene):
 	var new_scene = scene.instance()
 	new_scene.global_position = global_position
 	get_parent().add_child(new_scene)
+
+func enemy_die():
+	instance_scene(preload("res://enemies/enemy_death.tscn"))
+	var drop =  randi() % 3
+	match drop:
+		0:
+			instance_scene(preload("res://pickups/heart.tscn"))
+	queue_free()

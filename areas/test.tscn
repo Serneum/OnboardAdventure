@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://tiles/dungeon.tres" type="TileSet" id=5]
 [ext_resource path="res://tiles/enemy_door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://engine/snap_camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://pickups/key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://tiles/key_door.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 
@@ -49,3 +51,9 @@ scale = Vector2( 1, 2 )
 [node name="stalfos" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -128 )
 scale = Vector2( 1.00015, 1.12722 )
+
+[node name="key" parent="." instance=ExtResource( 8 )]
+position = Vector2( 77, -90 )
+
+[node name="key_door" parent="." instance=ExtResource( 9 )]
+position = Vector2( 88, 144 )

@@ -268,7 +268,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 DAMAGE = 0.5
-animname = "swing"
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0

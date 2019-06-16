@@ -10,12 +10,11 @@ func _process(delta):
 	if camera == null:
 		return
 	
-	print(overlaps_body(player))
 	if overlaps_body(player):
 		room_state = true
 		camera.limit_left = global_position.x
 		camera.limit_right = global_position.x + camera.SCREEN_SIZE.x * scale.x
-		camera.limit_top = global_position.y
+		camera.limit_top = global_position.y - 16
 		camera.limit_bottom = global_position.y + camera.SCREEN_SIZE.y * scale.y
 	else:
 		room_state = false

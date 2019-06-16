@@ -11,7 +11,6 @@
 [node name="Node" type="Node"]
 
 [node name="hud" parent="." instance=ExtResource( 1 )]
-layer = -5
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79.9335, 70.5836 )
@@ -48,5 +47,5 @@ position = Vector2( 0, 17 )
 scale = Vector2( 1, 2 )
 
 [node name="stalfos" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, -130 )
-scale = Vector2( 1.00006, 1.21671 )
+position = Vector2( 0, -128 )
+scale = Vector2( 1.00015, 1.12722 )

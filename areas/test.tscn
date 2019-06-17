@@ -10,7 +10,7 @@
 [ext_resource path="res://engine/snap_camera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://tiles/key_door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sounds/dungeon_music.tscn" type="PackedScene" id=10]
-[ext_resource path="res://sounds/snd_dungeon.wav" type="AudioStream" id=11]
+[ext_resource path="res://areas/Panel.gd" type="Script" id=11]
 
 [node name="Node" type="Node"]
 
@@ -44,10 +44,6 @@ tile_data = PoolIntArray( -458744, 0, 0 )
 position = Vector2( 72, 8 )
 rotation = 3.14159
 
-[node name="enemy_door2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 152, 72 )
-rotation = 1.5708
-
 [node name="enemy_door3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 8, 72 )
 rotation = 4.71239
@@ -72,6 +68,20 @@ scale = Vector2( 1.00015, 1.12722 )
 position = Vector2( 88, 144 )
 
 [node name="background" parent="." instance=ExtResource( 10 )]
-stream = ExtResource( 11 )
 volume_db = -20.0
 autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 204.0
+margin_top = 49.0
+margin_right = 284.0
+margin_bottom = 109.0
+script = ExtResource( 11 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_right = 80.0
+margin_bottom = 60.0
+bbcode_enabled = true
+bbcode_text = "[url=https://google.com]Google[/url]"
+text = "Google"
+[connection signal="meta_clicked" from="Panel/RichTextLabel" to="Panel" method="_on_RichTextLabel_meta_clicked"]
